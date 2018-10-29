@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Yggdrasil.EntityframeworkCore.Seeding.Migrations.Contexts;
-using Yggdrasil.EntityframeworkCore.Seeding.Migrations.Migrations;
 using Yggdrasil.EntityframeworkCore.Seeding.Migrations.Seeders;
 
 namespace Yggdrasil.EntityframeworkCore.Seeding.Migrations
