@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Yggdrasil.EntityframeworkCore.Seeding.Extensions;
 
 namespace Microsoft.EntityFrameworkCore.Extensions
 {
@@ -34,7 +35,7 @@ namespace Microsoft.EntityFrameworkCore.Extensions
         internal static IEnumerable<IDbContextSeeder> GetSeedersForMigration<TContext>(this TContext dbContext, string migrationId) where TContext : DbContext
         {
             var types = dbContext.GetSeederTypesForMigration(migrationId);
-            return types.Select(type => (IDbContextSeeder) dbContext.GetService(type)).ToList();
+            return types.Select(type => (IDbContextSeeder) dbContext.GetService(type)).OrderBy(_ => _.GetOrder());
         }
 
         internal static bool SeederFilter(Type type)
