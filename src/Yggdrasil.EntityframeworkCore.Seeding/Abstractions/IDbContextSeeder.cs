@@ -1,5 +1,6 @@
 ﻿// ReSharper disable CheckNamespace
 
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Microsoft.EntityFrameworkCore
@@ -9,21 +10,21 @@ namespace Microsoft.EntityFrameworkCore
         /// <summary>
         /// Called before a migration is applied to the database.
         /// </summary>
-        Task PreUpAsync();
+        Task PreUpAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Called after a migration has been applied to the database.
         /// </summary>
-        Task PostUpAsync();
+        Task PostUpAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Called before a migration is removed from the database.
         /// </summary>
-        Task PreDownAsync();
+        Task PreDownAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Called after a migration has been removed from the database.
         /// </summary>
-        Task PostDownAsync();
+        Task PostDownAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 }

@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seeding", "Seeding", "{ED9AE9E1-6E77-4D7C-82C2-9C07E2FD479C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yggdrasil.EntityframeworkCore.Seeding", "src\Yggdrasil.EntityframeworkCore.Seeding\Yggdrasil.EntityframeworkCore.Seeding.csproj", "{37EF1630-BD1D-4ABA-B4D4-E53163AD17E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yggdrasil.EntityframeworkCore.Seeding", "src\Yggdrasil.EntityframeworkCore.Seeding\Yggdrasil.EntityframeworkCore.Seeding.csproj", "{37EF1630-BD1D-4ABA-B4D4-E53163AD17E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yggdrasil.EntityframeworkCore.Seeding.Migrations", "tests\Yggdrasil.EntityframeworkCore.Seeding.Migrations\Yggdrasil.EntityframeworkCore.Seeding.Migrations.csproj", "{4DAEF60F-3046-4846-A068-F355A02321A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{37EF1630-BD1D-4ABA-B4D4-E53163AD17E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37EF1630-BD1D-4ABA-B4D4-E53163AD17E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37EF1630-BD1D-4ABA-B4D4-E53163AD17E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DAEF60F-3046-4846-A068-F355A02321A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DAEF60F-3046-4846-A068-F355A02321A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DAEF60F-3046-4846-A068-F355A02321A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DAEF60F-3046-4846-A068-F355A02321A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{37EF1630-BD1D-4ABA-B4D4-E53163AD17E5} = {ED9AE9E1-6E77-4D7C-82C2-9C07E2FD479C}
+		{4DAEF60F-3046-4846-A068-F355A02321A5} = {ED9AE9E1-6E77-4D7C-82C2-9C07E2FD479C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7476389C-1D63-4B77-80E7-3D965BD9D9B6}

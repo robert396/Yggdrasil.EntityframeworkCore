@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Extensions.Internal;
 namespace Microsoft.EntityFrameworkCore
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-    public class MigrationAttribute : Attribute
+    public class SeederForMigrationAttribute : Attribute
     {
         private readonly string _migration;
         public bool UseFullMigrationId { get; set; } = false;
         public int Order { get; set; } = 0;
 
-        public MigrationAttribute(string migration)
+        public SeederForMigrationAttribute(string migration)
         {
             _migration = migration;
         }
