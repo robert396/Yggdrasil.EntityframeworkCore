@@ -3,6 +3,20 @@ Set of extensions to the EFCore package by Microsoft for .NET Core
 
 ## Seeding ##
 
+### Warnings ###
+
+Using seeding of data in this way can be a risky due to the fact that you have to make any and all seeders
+be idempotent, but also if you are not using __Raw SQL__ to inject/modify data, then you have to make sure
+that any changes you make to the data models, such as removing a property that existed in a previous migration
+and you are using a seeder for that migration, then that seeder will break and will not be backwards compatible.
+
+For easier maintenance it is prudent that you use the __Migration Builder__ in the migrations for seeding instead
+of this way.
+
+__Use at your own risk!__
+
+### Getting Started ###
+
 Using seeding with EF Core is nice and easy with only a single line of code being needed to be enabled!
 
 ```c#
