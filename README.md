@@ -118,3 +118,38 @@ namespace ExampleApp.Seeders
     }
 }
 ```
+
+### Dependency Injection ###
+
+As the seeders are created from `Dependency Injection` then any and all seeders that are found in the `Migrations Assembly`
+need to be registered at the application level.
+
+Example:
+
+```c#
+public void ConfigureServices(IServiceCollection services)
+{
+    /* Removed for brevity */
+    services.AddScoped<CreateUsersSchemaSeeder>();
+    /* Removed for brevity */
+}
+```
+
+This can be done manually or via any service discovery mechanism that your chosen `DI` system supports such as `Autofac`, `Ninject` etc.
+
+This can also be done by adding an extra package called [scrutor](https://github.com/khellang/Scrutor).
+
+Simply add the nuget package into your application and then add the following code:
+
+```c#
+public void ConfigureServices(IServiceCollection services)
+{
+    /* Removed for brevity */
+    services.Scan(scanner => {
+        scanner.FromAssemblyOf<ApplicationDbContext>().AddClasses(filter => {
+            filter.WithAttribute<SeederForMigrationAttribute>();
+        }).AsSelf().WithScopedLifetime(); // Change the Lifetime to suit your requirements
+    });
+    /* Removed for brevity */
+}
+```
